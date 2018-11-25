@@ -27,6 +27,7 @@
 # end
 
 
+
 # Solution #2 -  Hash Table
 def intersection(array1, array2)
   # Instantiate new array for intersection
@@ -35,11 +36,12 @@ def intersection(array1, array2)
   # Check if either array is empty or nil
   if array1 != nil && array2 != nil
   # Set one array's elements to a hash table
+  # Could compare arrays, then set whichever is smaller to a new variable. Would be unnecessary variables? 
     if array1.length < array2.length
       array2_hash = Hash.new
     # Add each element of second array to hash
       array2.each do |element|
-        array2_hash[element] = "true"
+        array2_hash[element] = 1
       end
       # Check if first array elements are in hash
       array1.each do |element|
@@ -55,7 +57,7 @@ def intersection(array1, array2)
 
     # Add each element of second array to hash
       array1.each do |element|
-        array1_hash[element] = "true"
+        array1_hash[element] = 1
       end
 
       # Check if first array elements are in hash
@@ -72,4 +74,4 @@ def intersection(array1, array2)
   return array_intersection
 end
 
-# Should the arrays be sorted? 
+# Should the arrays be sorted?
